@@ -1,4 +1,4 @@
-# Project 3-1: Multithreaded Sorting Application
+# Multithreaded Sorting Application
 
 Multithreaded Sorting Application (Operating System Concepts, Chapter 4, Project 2)
 
