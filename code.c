@@ -59,4 +59,31 @@ void print_array(int *arr, size_t size) {
     }
     printf("\n");
 }
-
+int main() {
+    pthread_t tid[2];
+    pthread_attr_t attr; /* set of attributes for the thread */
+    init_array();
+    printf("Original array:\n");
+    print_array(array, array_size);
+    parameters data[2];
+    data[0].low = 0, data[0].high = array_size / 2;
+    data[1].low = array_size / 2, data[1].high = array_size;
+    /* get the default attributes */
+    pthread_attr_init(&attr);
+    /* create two threads to sort the two halves of the array */
+    for(size_t i = 0; i != 2; ++i) {
+        pthread_create(&tid[i], &attr, runner, &data[i]);
+    }
+    /* now wait for the thread to exit */
+    for(size_t i = 0; i != 2; ++i) {
+        pthread_join(tid[i], NULL);
+    }
+    printf("Sorting thread 0:\n");
+    print_array(array, array_size / 2);
+    printf("Sorting thread 1:\n");
+    print_array(array + array_size / 2, array_size - array_size / 2);
+    int *sorted_array = malloc(sizeof(int) * array_size);
+    merge_array(sorted_array);
+    printf("Merged thread:\n");
+    print_array(sorted_array, array_size);
+}
