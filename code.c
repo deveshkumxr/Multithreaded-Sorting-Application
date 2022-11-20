@@ -26,3 +26,37 @@ void *runner(void *param) {
     qsort(array + low, high - low, sizeof(int), cmp);
     pthread_exit(0);
 }
+void init_array() {
+    printf("Please enter the number of elements:");
+    scanf("%ld", &array_size);
+    for(size_t i = 0; i != array_size; i++) {
+        scanf("%d", &array[i]);
+    }
+}
+
+void merge_array(int *result) {
+    size_t low1 = 0, high1 = array_size / 2;
+    size_t low2 = array_size / 2, high2 = array_size;
+    size_t i = 0;
+    while(low1 < high1 && low2 < high2) {
+        if(array[low1] < array[low2]) {
+            result[i++] = array[low1++];
+        } else {
+            result[i++] = array[low2++];
+        }
+    }
+    if(low2 < high2) {
+        low1 = low2, high1 = high2;
+    }
+    while(low1 < high1) {
+        result[i++] = array[low1++];
+    }
+}
+
+void print_array(int *arr, size_t size) {
+    for(size_t i = 0; i != size; ++i) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
