@@ -9,11 +9,11 @@ Write a multithreaded sorting program that works as follows: A list of integers 
 ## Environment
 
 - OS: Ubuntu 22.04 
-- Compiler: GCC 7.4.0 
+- Compiler: GCC 12.2.0 
 
 ## Basic Ideas
 
-The idea is quite simple: first divide the list into two sublists, each of which is then sorted by an individual thread. Then in the main thread, after waiting for these two sub-threads, do the merge.
+The idea is simple: first divide the list into two sublists, each of which is then sorted by an individual thread. Then in the main thread, merge the two sorting threads.
 
 ## Details
 
