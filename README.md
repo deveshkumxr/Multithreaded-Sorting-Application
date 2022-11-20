@@ -107,3 +107,5 @@ Thread 1:
 After merging:
 -67 -11 -5 3 22 48 90 348
 ```
+![m-sort-ss](https://user-images.githubusercontent.com/92425949/202923013-e8c4859a-de07-4989-a90a-9946f1220c78.png)
+
