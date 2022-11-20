@@ -1,10 +1,10 @@
 # Project 3-1: Multithreaded Sorting Application
 
-Multithreaded Sorting Application. (Operating System Concepts, 10th Edition, Chapter 4, Project 2)
+Multithreaded Sorting Application. (Operating System Concepts, Chapter 4, Project 2)
 
 ## Description
 
-Write a multithreaded sorting program that works as follows: A list of integers is divided into two smaller lists. Two separate threads (which we will term sorting threads) sort each sublist using a sorting algorithm of your choice. The two sublists are then merged by a third thread — a merging thread — which merges the two sublists into a single sorted list.
+Objective is to write a multithreaded sorting program that works as follows: A list of integers is divided into two smaller lists. Two separate threads (which we will term sorting threads) sort each sublist using a sorting algorithm of your choice. The two sublists are then merged by a third thread — a merging thread — which merges the two sublists into a single sorted list.
 
 ## Environment
 
@@ -13,7 +13,7 @@ Write a multithreaded sorting program that works as follows: A list of integers 
 
 ## Basic Ideas
 
-The idea is simple: first divide the list into two sublists, each of which is then sorted by an individual thread. Then in the main thread, merge the two sorting threads.
+The idea is simple: first divide the list into two sublists, each of which is then sorted by an individual thread using quicksort. Then in the main thread, merge the two sorting threads.
 
 ## Details
 
@@ -59,7 +59,7 @@ void *runner(void *param) {
 
 ### Merge
 
-After two sublists are sorted, in the main thread, we need to merge sublists to get the final sorted list:
+After two sublists are sorted, we need to merge sublists to get the final sorted list:
 
 ```c
 void merge_array(int *result) {
