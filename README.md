@@ -9,7 +9,7 @@ Objective is to write a multithreaded sorting program that works as follows: A l
 ## Environment
 
 - OS: Ubuntu 22.04 
-- Compiler: GCC 12.2.0 
+- Compiler: GCC 11.3.0 
 
 ## Basic Ideas
 
