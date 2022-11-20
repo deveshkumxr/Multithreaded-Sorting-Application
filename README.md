@@ -1,10 +1,10 @@
 # Project 3-1: Multithreaded Sorting Application
 
-Multithreaded Sorting Application. (Operating System Concepts, Chapter 4, Project 2)
+Multithreaded Sorting Application (Operating System Concepts, Chapter 4, Project 2)
 
 ## Description
 
-Objective is to write a multithreaded sorting program that works as follows: A list of integers is divided into two smaller lists. Two separate threads (which we will term sorting threads) sort each sublist using a sorting algorithm of your choice. The two sublists are then merged by a third thread — a merging thread — which merges the two sublists into a single sorted list.
+Objective is to write a multithreaded sorting program that works as follows: A list of integers is divided into two smaller lists. Two separate threads (sorting threads) sort each sublist using a sorting algorithm of your choice. The two sublists are then merged by a third thread — a merging thread — which merges the two sublists into a single sorted list.
 
 ## Environment
 
@@ -107,5 +107,6 @@ Thread 1:
 After merging:
 -67 -11 -5 3 22 48 90 348
 ```
+And the screenshot of the same:
 ![m-sort-ss](https://user-images.githubusercontent.com/92425949/202923013-e8c4859a-de07-4989-a90a-9946f1220c78.png)
 
